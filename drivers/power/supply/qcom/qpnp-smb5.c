@@ -471,6 +471,9 @@ static int smb5_parse_dt_misc(struct smb5 *chip, struct device_node *node)
 	chg->typec_legacy_use_rp_icl = of_property_read_bool(node,
 				"qcom,typec-legacy-rp-icl");
 
+	chg->force_pd_enable = of_property_read_bool(node,
+				"qcom,force-pd-enable");
+
 	chg->sw_jeita_enabled = of_property_read_bool(node,
 				"qcom,sw-jeita-enable");
 

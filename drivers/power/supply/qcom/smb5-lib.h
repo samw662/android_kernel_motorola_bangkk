@@ -508,6 +508,7 @@ struct smb_charger {
 	bool			early_usb_attach;
 	bool			ok_to_pd;
 	bool			typec_legacy;
+	bool			force_pd_enable;
 	bool			typec_irq_en;
 	bool			typec_role_swap_failed;
 

@@ -6478,6 +6478,17 @@ static void typec_src_insertion(struct smb_charger *chg)
 	chg->ok_to_pd = (!(chg->typec_legacy || chg->pd_disabled)
 			|| chg->early_usb_attach) && !chg->pd_not_supported;
 
+	if (chg->force_pd_enable && !chg->ok_to_pd) {
+		pr_info("force-pd-enable: overriding ok_to_pd (legacy=%d pd_disabled=%d early=%d pd_not_sup=%d)\n",
+			chg->typec_legacy, chg->pd_disabled,
+			chg->early_usb_attach, chg->pd_not_supported);
+		chg->ok_to_pd = true;
+	}
+
+	pr_info("typec_src_insertion: legacy_reg=0x%02x typec_legacy=%d ok_to_pd=%d pd_disabled=%d early_usb=%d pd_not_sup=%d force_pd=%d\n",
+		stat, chg->typec_legacy, chg->ok_to_pd, chg->pd_disabled,
+		chg->early_usb_attach, chg->pd_not_supported, chg->force_pd_enable);
+
 	/* allow apsd proceed to detect QC2/3 */
 	if (!chg->ok_to_pd)
 		smblib_hvdcp_detect_try_enable(chg, true);

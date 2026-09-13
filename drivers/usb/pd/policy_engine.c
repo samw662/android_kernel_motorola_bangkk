@@ -3776,6 +3776,8 @@ static void psy_changed_notifier_work(struct work_struct *w)
 	/* Don't proceed if PE_START=0; start USB directly if needed */
 	if (!val.intval && !pd->pd_connected &&
 			typec_mode >= QTI_POWER_SUPPLY_TYPEC_SOURCE_DEFAULT) {
+		pr_info("usbpd: PE_START=0 (typec_mode=%d), skipping PD\n",
+			typec_mode);
 		ret = usbpd_get_psy_iio_property(pd,
 				POWER_SUPPLY_PROP_REAL_TYPE, &val);
 		if (ret) {
