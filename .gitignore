@@ -148,6 +148,13 @@ x509.genkey
 
 # generated defconfigs
 arch/*/configs/vendor/*_defconfig
+!/arch/arm64/configs/vendor/holi-qgki_defconfig
+
+# Local build helper: never stage, commit, or push it.
+/build_ram.sh
+/out/
+/weary.log
+/WearyStars-Stock-AOSP-*.zip
 
 # vendor device tree directories
 arch/arm64/boot/dts/vendor
