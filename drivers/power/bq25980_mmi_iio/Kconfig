@@ -1,3 +1,7 @@
 config BQ25980_MMI_IIO
 	tristate "BQ25980 MMI IIO charger driver"
 	default m
+
+config MMI_BQ25980_BULK_READ
+	bool "MMI BQ25980 bulk reads"
+	depends on BQ25980_MMI_IIO
