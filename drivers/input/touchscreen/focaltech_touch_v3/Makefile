@@ -14,5 +14,7 @@ clean:
 	rm -rf .tmp_versions
 
 
+ifneq ($(KBUILD_EXTMOD),)
 KBUILD_EXTRA_SYMBOLS += $(M)/../../../mmi_info/$(GKI_OBJ_MODULE_DIR)/Module.symvers
 KBUILD_EXTRA_SYMBOLS += $(M)/../touchscreen_mmi/$(GKI_OBJ_MODULE_DIR)/Module.symvers
+endif
