@@ -1,0 +1,6 @@
+config LDO_VIBRATOR_MMI
+	tristate "Motorola LDO vibrator"
+	depends on GPIOLIB && LEDS_CLASS
+	help
+	  Support the moto,vibrator-ldo device used by bangkk.
+	  The module is called ldo_vibrator_mmi.
