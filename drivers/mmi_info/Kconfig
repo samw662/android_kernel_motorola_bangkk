@@ -1,5 +1,6 @@
 config MMI_INFO
 	tristate "Motorola MMI Info driver"
+	depends on MMI_ANNOTATE
 	default m
 	help
 	  Say Y or M here if you want to support Motorola MMI info driver.

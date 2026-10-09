@@ -1,3 +1,4 @@
 config AWINIC_SAR
 	tristate "Awinic SAR sensor support"
+	depends on I2C && SENSORS_CLASS
 	default m

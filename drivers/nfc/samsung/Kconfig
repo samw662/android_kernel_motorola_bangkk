@@ -7,6 +7,7 @@ menu "Near Field Communication (NFC) devices"
 
 config SEC_NFC
         tristate "Samsung NFC driver"
+        depends on MMI_INFO
         default m
         help
           SAMSUNG NFC Driver.

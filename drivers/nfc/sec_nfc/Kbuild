@@ -8,4 +8,4 @@ ifneq ($(filter y,$(CONFIG_SEC_NFC_IF_I2C)),)
 	EXTRA_CFLAGS += -DCONFIG_SEC_NFC_IF_I2C
 endif
 
-obj-y        += sec_nfc.o
+obj-$(CONFIG_SEC_NFC) += sec_nfc.o
