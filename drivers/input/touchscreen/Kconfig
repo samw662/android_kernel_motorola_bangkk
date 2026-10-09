@@ -5,14 +5,38 @@
 
 config TOUCHSCREEN_MMI
 	tristate "Motorola Touchscreen MMI Class Driver"
+	depends on SENSORS_CLASS && MMI_RELAY
 	help
 	  Say Y here if you want to use the Motorola touchscreen class framework.
 
 config TOUCHSCREEN_GOODIX_BERLIN_MMI
 	tristate "Goodix Berlin Touchscreen support for Motorola devices"
-	depends on TOUCHSCREEN_MMI
+	depends on TOUCHSCREEN_MMI && MMI_INFO
 	help
 	  Say Y or M here if you have a Goodix Berlin touchscreen.
+
+config GTP_FOD
+	bool "Goodix fingerprint-on-display gestures"
+	depends on TOUCHSCREEN_GOODIX_BERLIN_MMI
+
+config GTP_LIMIT_USE_SUPPLIER
+	bool "Goodix supplier-specific panel configuration"
+	depends on TOUCHSCREEN_GOODIX_BERLIN_MMI
+
+config GOODIX_ESD_ENABLE
+	bool "Goodix ESD protection"
+	depends on TOUCHSCREEN_GOODIX_BERLIN_MMI
+
+config GTP_LAST_TIME
+	bool "Goodix last-event timing"
+	depends on TOUCHSCREEN_GOODIX_BERLIN_MMI
+
+config DRM_PANEL_NOTIFICATIONS
+	bool "Motorola DRM panel notifications"
+
+config BOARD_USES_DOUBLE_TAP_CTRL
+	bool "Motorola double-tap control"
+	depends on TOUCHSCREEN_MMI
 
 config TOUCHSCREEN_FOCALTECH_V3_MMI
 	tristate "Focaltech V3 Touchscreen support for Motorola devices"

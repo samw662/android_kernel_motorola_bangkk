@@ -916,6 +916,7 @@ config INPUT_STPMIC1_ONKEY
 
 config RBS_FOD_MMI
 	tristate "Motorola RBS FOD Touchscreen Driver"
+	depends on MMI_RELAY
 	default m
 	help
 	  Enable support for RBS FOD dynamic node driver for Motorola devices.

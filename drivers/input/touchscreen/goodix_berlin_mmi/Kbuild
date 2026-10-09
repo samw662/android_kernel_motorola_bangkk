@@ -3,7 +3,7 @@ EXTRA_CFLAGS += -Wall
 EXTRA_CFLAGS += \
 		-I$(srctree)/include
 
-obj-y := goodix_brl_mmi.o
+obj-$(CONFIG_TOUCHSCREEN_GOODIX_BERLIN_MMI) := goodix_brl_mmi.o
 goodix_brl_mmi-objs := \
 					goodix_brl_i2c.o \
 					goodix_brl_spi.o \
@@ -62,7 +62,7 @@ ifneq ($(filter m y,$(CONFIG_MOTO_DDA_PASSIVE_STYLUS)),)
     EXTRA_CFLAGS += -DCONFIG_MOTO_DDA_PASSIVESTYLUS
 endif
 
-ifneq ($(filter m y,$(CONFIG_INPUT_TOUCHSCREEN_MMI)),)
+ifneq ($(filter m y,$(CONFIG_TOUCHSCREEN_MMI)),)
     EXTRA_CFLAGS += -DCONFIG_INPUT_TOUCHSCREEN_MMI
     goodix_brl_mmi-objs += goodix_ts_mmi.o
 endif
