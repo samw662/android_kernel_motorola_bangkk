@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-2.0-only
+config RMNET_OFFLOAD
+	bool "RMNET offload"
+	depends on RMNET_CORE
+	help
+	  Build RMNET receive offload support.
+
+config RMNET_SHS
+	bool "RMNET SHS"
+	depends on RMNET_CORE
+	help
+	  Build RMNET smart hash scheduling support.

@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0-only
+config RMNET_CORE
+	bool "Qualcomm RMNET core"
+	depends on NET && INET
+	default y if ARCH_HOLI
+	help
+	  Build the Qualcomm RMNET data and control drivers.

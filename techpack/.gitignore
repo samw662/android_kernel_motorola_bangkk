@@ -8,3 +8,7 @@
 !/audio/asoc/
 !/audio/asoc/codecs/
 !/audio/asoc/codecs/aw882xx/
+!/datarmnet/
+!/datarmnet-ext/
+!/datarmnet-ext/offload/
+!/datarmnet-ext/shs/

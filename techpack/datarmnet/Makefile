@@ -1,2 +1,2 @@
 # SPDX-License-Identifier: GPL-2.0-only
-obj-y += core/
+obj-$(CONFIG_RMNET_CORE) += core/
