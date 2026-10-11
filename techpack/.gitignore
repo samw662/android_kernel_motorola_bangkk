@@ -2,3 +2,9 @@
 # ignore all subdirs except stub
 !/stub/
 */
+
+# Builtin bangkk driver configuration and RMNET sources
+!/audio/
+!/audio/asoc/
+!/audio/asoc/codecs/
+!/audio/asoc/codecs/aw882xx/

@@ -84,6 +84,7 @@ source "sound/soc/zte/Kconfig"
 
 # Supported codecs
 source "sound/soc/codecs/Kconfig"
+source "techpack/audio/asoc/codecs/aw882xx/Kconfig"
 
 # generic frame-work
 source "sound/soc/generic/Kconfig"

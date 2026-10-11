@@ -2098,7 +2098,7 @@ static int aw882xx_parse_dt(struct device *dev, struct aw882xx *aw882xx,
 	return 0;
 }
 
-int aw882xx_hw_reset(struct aw882xx *aw882xx)
+static int aw882xx_hw_reset(struct aw882xx *aw882xx)
 {
 	pr_info("%s: enter\n", __func__);
 

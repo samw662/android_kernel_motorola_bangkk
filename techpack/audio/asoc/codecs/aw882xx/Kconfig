@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-2.0-only
+config SND_SOC_AW882XX_K419
+	bool "AW882XX legacy amplifier"
+	depends on I2C
+	help
+	  Build the legacy AW882XX SmartPA driver.
+
+config SND_SOC_AW882XX_ACF
+	bool "AW882XX ACF amplifier"
+	depends on I2C
+	help
+	  Build the AW882XX ACF SmartPA driver.

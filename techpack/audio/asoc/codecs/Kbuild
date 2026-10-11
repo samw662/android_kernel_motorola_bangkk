@@ -274,8 +274,8 @@ ifeq ($(KERNEL_BUILD), 1)
 	obj-y	+= bolero/
 	obj-y	+= wsa883x/
 	obj-y	+= rouleur/
-	obj-y	+= aw882xx/
-	obj-y	+= aw882xxacf/
+	obj-$(CONFIG_SND_SOC_AW882XX_K419) += aw882xx/
+	obj-$(CONFIG_SND_SOC_AW882XX_ACF) += aw882xxacf/
 	obj-y	+= aw87xxx/
 	obj-y	+= fs1815/
 ifeq ($(CONFIG_SND_SOC_AW8838), y)
