@@ -158,3 +158,6 @@ arch/arm/boot/dts/vendor
 /weary.log
 /out/
 /WearyStars-Control-*.zip
+
+# Tracked layered kernel configuration
+!/arch/arm64/configs/vendor/holi-qgki_defconfig
