@@ -23,7 +23,7 @@ make O="$OUT" ARCH=arm64 "$@" vendor/holi-qgki_defconfig
 (cd "$OUT" && "$ROOT/scripts/kconfig/merge_config.sh" -m -O "$OUT" \
     "$ROOT/$BASE" "$ROOT/$COMMON" "$ROOT/$DEVICE")
 make O="$OUT" ARCH=arm64 "$@" olddefconfig
-for symbol in TOUCHSCREEN_MMI TOUCHSCREEN_FTS_V3 TOUCHSCREEN_GOODIX_BERLIN_MMI; do
+for symbol in INPUT_TOUCHSCREEN_MMI TOUCHSCREEN_MMI TOUCHSCREEN_FTS_V3 TOUCHSCREEN_GOODIX_BERLIN_MMI; do
     grep -qx "CONFIG_${symbol}=y" "$OUT/.config" || {
         echo "Required builtin config lost: CONFIG_$symbol" >&2; exit 1;
     }
