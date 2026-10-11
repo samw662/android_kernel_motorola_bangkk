@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: GPL-2.0-only
+config LDO_VIBRATOR_MMI
+	bool "Motorola GPIO LDO vibrator"
+	depends on OF && GPIOLIB && LEDS_CLASS
+	help
+	  Build the Motorola moto,vibrator-ldo GPIO vibrator driver.

@@ -24,7 +24,7 @@ make O="$OUT" ARCH=arm64 "$@" vendor/holi-qgki_defconfig
     "$ROOT/$BASE" "$ROOT/$COMMON" "$ROOT/$DEVICE")
 make O="$OUT" ARCH=arm64 "$@" olddefconfig
 for symbol in INPUT_TOUCHSCREEN_MMI TOUCHSCREEN_MMI TOUCHSCREEN_FTS_V3 TOUCHSCREEN_GOODIX_BERLIN_MMI \
-    SND_SOC_AW882XX_K419 SND_SOC_AW882XX_ACF; do
+    SND_SOC_AW882XX_K419 SND_SOC_AW882XX_ACF LDO_VIBRATOR_MMI LEDS_QPNP_VIBRATOR_LDO; do
     grep -qx "CONFIG_${symbol}=y" "$OUT/.config" || {
         echo "Required builtin config lost: CONFIG_$symbol" >&2; exit 1;
     }
